@@ -82,7 +82,7 @@ shape(material, color, position, [shape params], transformFunction, [transform f
 - `material` is the material the that the shape will take on, the available materials are listed later
 - `color` is the rgb albedo color of the shape, the values are `vec3`s with each component ranging from `0-255`
 - `position` is the 3D position the shape will be placed at in local space (unless the world position tag is set)
-- [shape params] are parameters specific to the shape function, listed later
+- `[shape params]` are parameters specific to the shape function, listed later
 - `transformFunction` is NOT a function pointer, it is an integer. More information on transform functions as well as the available ones is written later.
 - `[transfom function params]` are parameters specific to to the specified transform function
 
