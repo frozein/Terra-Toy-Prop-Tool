@@ -1,0 +1,11 @@
+@category 1
+@placesound 1
+@rotateable
+@colorable 243 168 51
+
+height = rand(6.0, 7.0)
+rad = rand(3.0, 4.0)
+
+box(MAT_MATTE, vec3(33, 122, 37), vec3(0, height / 2 - 1, 0), vec3(1, height, 1), quaternion(), TF_NONE)
+cylinder(MAT_MATTE, vec3()  , vec3(1.5, height * 2 - rad - 1, 0), 1.0, 1.5, quaternion(vec3(0, 0, 1), M_PI / 2), TF_NONE)
+cylinder(MAT_MATTE, USER_COLOR, vec3(1.5, height * 2 - rad - 1, 0), rad, 1.5, quaternion(vec3(0, 0, 1), M_PI / 2), TF_NONE)

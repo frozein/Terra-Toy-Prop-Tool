@@ -1,0 +1,17 @@
+@category 0
+@placesound 0
+@colorable 255 184 232
+
+leafCol1 = USER_COLOR
+leafCol2 = USER_COLOR * 0.8
+
+baseRad = rand(6.0, 8.0)
+
+box(MAT_MATTE, vec3(82, 53, 33), vec3(0, 5, 0), vec3(2, 6, 2), quaternion(), TF_NONE)
+ellipsoid(MAT_LEAVES, vec3(), vec3(0, 10, 0), vec3(baseRad, baseRad / 3.5, baseRad), quaternion(), TF_LEAVES, leafCol1, leafCol2)
+
+for i in range(0, rand(1, 4))
+{
+    angle = rand(0, 2 * M_PI)
+    ellipsoid(MAT_LEAVES, vec3(), vec3(7 * cos(angle), 9, 7 * sin(angle)), vec3(4, 2, 4), quaternion(), TF_LEAVES, leafCol1, leafCol2)
+}

@@ -1,0 +1,31 @@
+@category 2
+@placesound 4
+@rotateable
+@colorable 236 39 63
+
+func window(angle)
+{
+    if(rand(0, 2) == 0)
+        ret
+
+    box(MAT_MATTE, vec3(105, 190, 255), vec3(6 * cos(angle), 6, 6 * sin(angle)), vec3(1.5 * abs(sin(angle)) + 1, 2, 1.5 * abs(cos(angle)) + 1), quaternion(), TF_NONE)
+}
+
+# done in "backwards" order so the base will not overdraw on the details
+
+# door
+box(MAT_MATTE, vec3(224, 185, 43), vec3(6, 4, 2), vec3(1, 1, 0.5), quaternion(), TF_NONE) # bell
+box(MAT_MATTE, USER_COLOR, vec3(6, 2.5, 0), vec3(1, 4, 2.5), quaternion(), TF_NONE)
+
+# windows
+window(M_PI / 2.0)
+window(M_PI)
+window(M_PI * 1.5)
+
+# base
+box(MAT_MATTE, vec3(225), vec3(0, 5, 0), vec3(6), quaternion(), TF_NONE)
+pyramid(MAT_MATTE, vec3(), vec3(0, 10, 0), vec3(16, 8, 16), quaternion(), TF_LEAVES, USER_COLOR, USER_COLOR * 0.9)
+
+# chimney
+if(rand(0, 2) == 1)
+    cylinder(MAT_MATTE, vec3(100), vec3(-3, 15, 3), 1.5, 5, quaternion(), TF_NONE)

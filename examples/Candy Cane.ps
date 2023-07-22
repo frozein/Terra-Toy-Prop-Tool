@@ -1,0 +1,26 @@
+@category 2
+@placesound 2
+@rotateable
+@colorable 236 39 63
+
+func get_col(x)
+{
+    if x % 2 == 0
+        ret USER_COLOR
+    else
+        ret vec3(255)
+}
+
+rad = 2.0
+topRad = 5.0
+
+heightSteps = 5
+for i in range(0, heightSteps)    
+    sphere(MAT_MATTE, get_col(i), vec3(0, i * rad, 0), rad, TF_NONE)
+
+initialHeight = (heightSteps + 1) * rad
+
+angleSteps = 6
+angleMult = M_PI / angleSteps
+for i in range(0, angleSteps)
+    sphere(MAT_MATTE, get_col(i), vec3(topRad + topRad * cos(i * angleMult), initialHeight + topRad * sin(i * angleMult), 0), rad, TF_NONE)
