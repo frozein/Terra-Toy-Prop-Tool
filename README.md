@@ -1,5 +1,5 @@
 # Terra Toy Prop Tool
-This is the offial documentation for the custom prop creation tools for Terra Toy. In this repository, you will find documentation on [PropScript](https://github.com/frozein/PropScript) (the programming language used to create props), examples of PropScript files, as well as an executable for packaging the source code into a format readable by the game. Please note that Terra Toy as well as PropScript are both in a beta state, so you may encounter bugs or unintuitive behavior, and there is a lack of features.
+This is the offial documentation for the custom prop creation tools for Terra Toy. In this repository, you will find documentation on [PropScript](https://github.com/frozein/PropScript) (the programming language used to create props), examples of PropScript files, as well as an executable for packaging the source code into a format readable by the game. Please note that Terra Toy as well as PropScript are both in a beta state, so you may encounter bugs or unintuitive behavior, as well as a lack of features.
 
 ## Basic PropScript Documentation
 PropScript has an overall syntax somewhat similar to Python's (so set your text editor's syntax highlighting to Python), with the exception that code blocks must be contained in curly braces `{}`. PropScript files have the extension `.ps`.
