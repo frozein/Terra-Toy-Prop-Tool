@@ -100,6 +100,8 @@ sphere(MAT_MATTE, vec3(255 0, 0), vec3(1.0, 0.0, 3.0), 10.0, TF_LEAVES, vec3(0),
 - `cylinder`, with parameters `radius (float)`, `height (float)`, and `orient (quaternion)`. NOTE: the cylinder will be placed at the geometric center of the volume, NOT the base. Similarly to the issue with `box`, `height` actually represents half the height.
 - `cone`, with parameters `radius (float)` and `height (float)`
 - `pyramid`, with parameters `length (vec3)` and `orient (quaternion)`
+- `triangle` with parameters `vertex a (vec3)`, `vertex b (vec3)`, and `vertex c (vec3)`
+- `quad` with parameters `vertex a (vec3)`, `vertex b (vec3)`, `vertex c (vec3)`, and `vertex d (vec3)`. NOTE: all the points must be coplanar or you may get strange results
 
 ### Available Materials
 - `MAT_MATTE`: basic matte, diffuse
