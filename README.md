@@ -133,7 +133,7 @@ The last component of PropScript files for Terra Toy are tags. Tags are prefixed
 - `@useworldspace`, specifies that the all positions and orientations given are in world space, not local space, and should not be transformed based on where the player clicked.
 
 ## Adding a Custom Prop
-Once you have created your PropScript file (see the examples if you are still stuck), you must run the proptool executable to package it into a `.prop` file used by the game. Do note that each prop additionally requires an icon image. Simply follow the instructions in the executable, and you will have created your `.prop`. Simply place it into the `assets/props/` directory in the game's local files, run the game, and your prop will appear in the list.
+Once you have created your PropScript file (see the examples if you are still stuck), you must run the proptool executable to package it into a `.prop` file used by the game. Do note that each prop additionally requires an icon image. Simply follow the instructions in the executable, and you will have created your `.prop`. Simply place it into the `assets/props/custom/` directory in the game's local files, run the game, and your prop will appear in the list.
 
 Any parsing errors will be reported by proptool, and any runtime errors will be reported in the `properror.txt` file in the game's local files. (you only need to check this if your prop is not working as expected).
 
