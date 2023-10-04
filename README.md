@@ -1,5 +1,5 @@
 # Terra Toy Prop Tool
-This is the offial documentation for the custom prop creation tools for Terra Toy. In this repository, you will find documentation on [PropScript](https://github.com/frozein/PropScript) (the programming language used to create props), examples of PropScript files, as well as an executable for packaging the source code into a format readable by the game. Please note that Terra Toy as well as PropScript are both in a beta state, so you may encounter bugs or unintuitive behavior, and there is a lack of features.
+This is the official documentation for the custom prop creation tools for Terra Toy. In this repository, you will find documentation on [PropScript](https://github.com/frozein/PropScript) (the programming language used to create props), examples of PropScript files, as well as an executable for packaging the source code into a format readable by the game. Please note that Terra Toy as well as PropScript are both in a beta state, so you may encounter bugs or unintuitive behavior, as well as a lack of features.
 
 ## Basic PropScript Documentation
 PropScript has an overall syntax somewhat similar to Python's (so set your text editor's syntax highlighting to Python), with the exception that code blocks must be contained in curly braces `{}`. PropScript files have the extension `.ps`.
@@ -82,7 +82,7 @@ shape(material, color, position, [shape params], transformFunction, [transform f
 - `material` is the material the that the shape will take on, the available materials are listed later
 - `color` is the rgb albedo color of the shape, the values are `vec3`s with each component ranging from `0-255`
 - `position` is the 3D position the shape will be placed at in local space (unless the world position tag is set)
-- [shape params] are parameters specific to the shape function, listed later
+- `[shape params]` are parameters specific to the shape function, listed later
 - `transformFunction` is NOT a function pointer, it is an integer. More information on transform functions as well as the available ones is written later.
 - `[transfom function params]` are parameters specific to to the specified transform function
 
@@ -100,6 +100,8 @@ sphere(MAT_MATTE, vec3(255 0, 0), vec3(1.0, 0.0, 3.0), 10.0, TF_LEAVES, vec3(0),
 - `cylinder`, with parameters `radius (float)`, `height (float)`, and `orient (quaternion)`. NOTE: the cylinder will be placed at the geometric center of the volume, NOT the base. Similarly to the issue with `box`, `height` actually represents half the height.
 - `cone`, with parameters `radius (float)` and `height (float)`
 - `pyramid`, with parameters `length (vec3)` and `orient (quaternion)`
+- `triangle` with parameters `vertex a (vec3)`, `vertex b (vec3)`, and `vertex c (vec3)`
+- `quad` with parameters `vertex a (vec3)`, `vertex b (vec3)`, `vertex c (vec3)`, and `vertex d (vec3)`. NOTE: all the points must be coplanar or you may get strange results
 
 ### Available Materials
 - `MAT_MATTE`: basic matte, diffuse
@@ -132,7 +134,7 @@ The last component of PropScript files for Terra Toy are tags. Tags are prefixed
 - `@scale [float]`, specifies an overall scale for the object. Useful if you make the prop larger than desired for ease of development, then want to scale it down when finally in-game.
 
 ## Adding a Custom Prop
-Once you have created your PropScript file (see the examples if you are still stuck), you must run the proptool executable to package it into a `.prop` file used by the game. Do note that each prop additionally requires an icon image. Simply follow the instructions in the executable, and you will have created your `.prop`. Simply place it into the `assets/props/` directory in the game's local files, run the game, and your prop will appear in the list.
+Once you have created your PropScript file (see the examples if you are still stuck), you must run the proptool executable to package it into a `.prop` file used by the game. Do note that each prop additionally requires an icon image. Simply follow the instructions in the executable, and you will have created your `.prop`. Simply place it into the `assets/props/custom/` directory in the game's local files, run the game, and your prop will appear in the list.
 
 Any parsing errors will be reported by proptool, and any runtime errors will be reported in the `properror.txt` file in the game's local files. (you only need to check this if your prop is not working as expected).
 
