@@ -129,6 +129,7 @@ The last component of PropScript files for Terra Toy are tags. Tags are prefixed
 - `@rotateable`, specifies that the player sould be able to rotate this prop.
 - `@colorable [vec3]`, specifies that the player should be able to edit this prop's color. The parameter represents the default color.
 - `@useworldspace`, specifies that the all positions and orientations given are in world space, not local space, and should not be transformed based on where the player clicked.
+- `@scale [float]`, specifies an overall scale for the object. Useful if you make the prop larger than desired for ease of development, then want to scale it down when finally in-game.
 
 ## Adding a Custom Prop
 Once you have created your PropScript file (see the examples if you are still stuck), you must run the proptool executable to package it into a `.prop` file used by the game. Do note that each prop additionally requires an icon image. Simply follow the instructions in the executable, and you will have created your `.prop`. Simply place it into the `assets/props/` directory in the game's local files, run the game, and your prop will appear in the list.
